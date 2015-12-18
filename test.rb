@@ -69,7 +69,7 @@ Capybara.app_host = 'http://bbsistema.tecmilenio.edu.mx/'
 class Test
   include Capybara::DSL
   def test_google(user, pass)
-    if user.empty? or pass.empty? then abort end
+    abort if user.empty? or pass.empty?
 
     visit('/')
     fill_in('user_id', :with => user)
