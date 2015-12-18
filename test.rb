@@ -1,13 +1,40 @@
 require 'rubygems'
+require 'optparse'
 require 'capybara'
 require 'capybara/dsl'
 require 'capybara/poltergeist'
 
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: test.rb [-chv] -u<user> -p<pass>"
+
+  opts.on("-v", "Verbose") do |v|
+    options[:verbose] = v
+  end
+
+  opts.on("-c", "Use Chrome") do |c|
+    options[:chrome] = c
+  end
+
+  opts.on("-h", "Use PhantomJS (headless)") do |h|
+    options[:headless] = h
+  end
+
 Capybara.run_server = false
 
-Capybara.default_driver = :selenium
-#Capybara.default_driver = :poltergeist
-#Capybara.javascript_driver = :poltergeist
+if options[:chrome]
+  Capybara.register_driver :selenium do |app|
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  end
+end
+
+if options[:headless] 
+  Capybara.default_driver = :poltergeist
+  Capybara.javascript_driver = :poltergeist
+else 
+  Capybara.default_driver = :selenium
+end
+
 Capybara.app_host = 'http://bbsistema.tecmilenio.edu.mx/'
 
 module MyCapybaraTest
