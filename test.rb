@@ -77,11 +77,11 @@ class Test
     click_on('Login')
 
     within_frame 'content' do
-        page.find('#column2')
+        page.find('#column2') if opts.verbose
         click_on('CAP.CE')
     end
     
-    print page.html if options.verbose
+    print page.html if opts.verbose
 
   end
 end
