@@ -47,7 +47,7 @@ def self.parse(args)
   options
 end
 
-opts = parse(ARGV)
+$opts = parse(ARGV)
 
 Capybara.run_server = false
 
