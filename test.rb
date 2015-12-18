@@ -75,10 +75,14 @@ class Test
     fill_in('user_id', :with => user)
     fill_in('password', :with => pass)
     click_on('Login')
-    
-    if page.has_content?('CAP.CE00028.5.17NOV2015')
-      puts("holy!")
+
+    within_frame 'content' do
+        page.find('#column2')
+        click_on('CAP.CE')
     end
+    
+    print page.html if options.verbose
+
   end
 end
 
