@@ -6,6 +6,7 @@ def self.parse(args)
   options.browser = "firefox"
   options.user = ""
   options.pass = ""
+  options.phantomjs_path = ""
   options.verbose = false
 
   opt_parser = OptionParser.new do |opts|
@@ -24,6 +25,10 @@ def self.parse(args)
 
     opts.on("-bBROWSER", "--browser BROWSER", "User [firefox|chrome|phantomjs]") do |b|
       options.browser = b
+    end
+
+    opts.on("-j[PATH]", "--js-bin-path[=PATH]", "PhantomJS bin path") do |j|
+      options.phantomjs_path = j
     end
 
     opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|

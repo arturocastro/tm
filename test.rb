@@ -16,6 +16,15 @@ if $options.browser == "chrome"
 end
 
 if $options.browser == "phantomjs"
+  path = $options.phantomjs_path
+
+  if !path
+    o = {:phantomjs => path}
+    Capybara.register_driver :poltergeist do |app|
+      Capybara::Poltergeist::Driver.new(app, o)
+    end
+  end
+
   Capybara.default_driver = :poltergeist
   Capybara.javascript_driver = :poltergeist
 else 
