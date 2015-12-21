@@ -5,17 +5,17 @@ require 'capybara/poltergeist'
 require_relative('opt')
 
 
-$opts = parse(ARGV)
+$options = parse(ARGV)
 
 Capybara.run_server = false
 
-if opts.browser == "chrome"
+if $options.browser == "chrome"
   Capybara.register_driver :selenium do |app|
     Capybara::Selenium::Driver.new(app, :browser => :chrome)
   end
 end
 
-if opts.browser == "phantomjs"
+if $options.browser == "phantomjs"
   Capybara.default_driver = :poltergeist
   Capybara.javascript_driver = :poltergeist
 else 
@@ -35,13 +35,13 @@ class Test
     click_on('Login')
 
     within_frame 'content' do
-        page.find('#column2') if opts.verbose
+        page.find('#column2') if $options.verbose
         click_on('CAP.CE')
     end
     
-    print page.html if opts.verbose
+    print page.html if $options.verbose
 
   end
 end
 
-Test.new.test_google(opts.user, opts.pass)
+Test.new.test_google($options.user, $options.pass)
