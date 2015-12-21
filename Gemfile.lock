@@ -20,6 +20,8 @@ GEM
     io-like (0.3.0)
     launchy (2.4.3)
       addressable (~> 2.3)
+    mailgun (0.8)
+      rest-client
     mime-types (3.0)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2015.1120)
@@ -35,6 +37,8 @@ GEM
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rubyzip (1.1.7)
     selenium-webdriver (2.48.1)
       childprocess (~> 0.5)
@@ -55,6 +59,7 @@ DEPENDENCIES
   capybara
   chromedriver-helper
   launchy
+  mailgun
   poltergeist
   selenium-webdriver
 
