@@ -27,7 +27,6 @@ GEM
     mailgun (0.8)
       rest-client
     mime-types (2.99)
-    mime-types-data (3.2015.1120)
     mini_portile2 (2.0.0)
     multi_json (1.11.2)
     netrc (0.11.0)
@@ -69,8 +68,6 @@ DEPENDENCIES
   chromedriver-helper
   launchy
   mailgun
+  mime-types (< 3.0)
   poltergeist
   selenium-webdriver
-
-BUNDLED WITH
-   1.11.2
