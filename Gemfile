@@ -2,7 +2,7 @@
 source "https://rubygems.org"
 
 gem "mime-types", "< 3.0"
-gem "capybara"
+gem "capybara", "2.1.0"
 gem "poltergeist"
 gem "mailgun"
 
