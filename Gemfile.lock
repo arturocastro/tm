@@ -1,3 +1,12 @@
+PATH
+  remote: ./poltergeist
+  specs:
+    poltergeist (1.8.1)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -32,11 +41,6 @@ GEM
     netrc (0.11.0)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
-    poltergeist (1.8.1)
-      capybara (~> 2.1)
-      cliver (~> 0.3.1)
-      multi_json (~> 1.0)
-      websocket-driver (>= 0.2.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -69,5 +73,5 @@ DEPENDENCIES
   launchy
   mailgun
   mime-types (< 3.0)
-  poltergeist
+  poltergeist!
   selenium-webdriver

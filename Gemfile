@@ -3,7 +3,7 @@ source "https://rubygems.org"
 
 gem "mime-types", "< 3.0"
 gem "capybara"
-gem "poltergeist"
+gem "poltergeist", :path => "./poltergeist"
 gem "mailgun"
 
 group :development do
