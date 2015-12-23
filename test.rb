@@ -9,14 +9,15 @@ $options = parse(ARGV)
 
 Capybara.run_server = false
 
-if $options.browser == "chrome"
+if $options.browser == 'chrome'
   Capybara.register_driver :selenium do |app|
     Capybara::Selenium::Driver.new(app, :browser => :chrome)
   end
 end
 
-if $options.browser == "phantomjs"
+if $options.browser == 'phantomjs'
   path = $options.phantomjs_path
+  p "phantomjs_bin=#{path}" if $options.verbose
 
   if !path
     o = {:phantomjs => path, :debug => true}
