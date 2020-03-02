@@ -3,7 +3,7 @@ source "https://rubygems.org"
 
 gem "mime-types", "< 3.0"
 gem "nokogiri", "1.6.8"
-gem "rack", "1.6.5"
+gem "rack", "2.2.2"
 gem "public_suffix", "1.4.6"
 gem "poltergeist", :path => "./poltergeist"
 gem "mailgun"
